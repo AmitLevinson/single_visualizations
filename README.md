@@ -7,7 +7,7 @@ In this folder I display assorted visualizations I created, Enjoy!
 ### **Mapping bomb shelters in Be'er-Sheva, Israel**  
 *12.11.2019*  
 
-In this visualization I mapped the bomb shelters near my neighborhood in Be'er-Sheva.  
+In this visualization I mapped the bomb shelters near my neighborhood in Be'er-Sheva. I discovered open data sets from our municpality's website and took the next day's opportunity (missiles fired towards israel) to plot bomb shelters.  
 [Link to code](https://github.com/AmitLevinson/Projects/blob/master/beer_sheva_municipality/mapping_bomb_shelters/shelters_b.R)
 
 <p align = "center">
