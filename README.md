@@ -5,8 +5,8 @@ In this folder I display assorted visualizations I created, Enjoy!
 
 
 ### **A map of Be'er-Sheva streets (left) and light posts (right)**  
-*23.11.2019  
-I mapped the streets of Be'er Sheva thanks to [Christian Burkhart](https://ggplot2tutor.com/streetmaps/streetmaps/) blog. Once I mapped that (left), I could map the city lights of the city thanks to their free [open data](https://www.beer-sheva.muni.il/OpenData/Pages/Data.aspx).  
+*23.11.2019*  
+I mapped the streets of Be'er Sheva thanks to [Christian Burkhart](https://ggplot2tutor.com/streetmaps/streetmaps/) blog. Once I mapped the streets (left) I could map the city lights of the city thanks to the municipality's free [open data](https://www.beer-sheva.muni.il/OpenData/Pages/Data.aspx).  
 [Link to street map code](https://github.com/AmitLevinson/Projects/blob/master/beer_sheva_municipality/city_streets/street_map_gold.R) | [Link to light posts code](https://github.com/AmitLevinson/Projects/blob/master/beer_sheva_municipality/city_light_posts/city_light_b7_sf.R)  
 
 <img src="beer_sheva_municipality/city_streets/street_map_gold.png" width = "400"/> <img src="beer_sheva_municipality/city_light_posts/street_light_of_b7.png" width = "400"/>
