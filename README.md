@@ -12,6 +12,7 @@ I mapped the streets of Be'er Sheva thanks to [Christian Burkhart](https://ggplo
 <p align = "center">
 <img src="beer_sheva_municipality/city_streets/street_map_gold.png" width = "350"/> <img src="beer_sheva_municipality/city_light_posts/street_light_of_b7.png" width = "350"/>
 </p>  
+
 ### **Mapping bomb shelters in Be'er-Sheva, Israel**  
 *12.11.2019*  
 
