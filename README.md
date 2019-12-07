@@ -1,5 +1,4 @@
 # Single Visualizations
-======
 
 In this folder I display assorted single visualizations I created in different contexts and datatsets. Enjoy!  
 </br>
