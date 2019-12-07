@@ -1,6 +1,7 @@
-## Random Visualizations:
+## Sinlge Visualizations:
+------
 
-In this folder I display assorted visualizations I created, Enjoy!  
+In this folder I display assorted single visualizations I created in different contexts and datatsets. Enjoy!  
 </br>
 
 
