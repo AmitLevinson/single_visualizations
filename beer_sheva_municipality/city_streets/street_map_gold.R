@@ -47,7 +47,7 @@ plot_gold <- ggplot()+
           size = .3,
           alpha = .6) +
   #Note that these parameters are a little more than the map itself so that'll it create
-  # a sense of 'zoom out'
+  # a sense of "zoom out"
   coord_sf(xlim = c(34.74647,34.82900),
                    ylim = c(31.19685,31.28791),
                    expand = FALSE)+
