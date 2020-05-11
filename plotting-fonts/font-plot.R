@@ -1,6 +1,5 @@
 library(extrafont)
 library(tidyverse)
-library(stringr)
 
 # convert string so they won't be read as factor
 options(stringsAsFactors = FALSE)
@@ -27,7 +26,7 @@ ggplot(df, aes(x = x_axis, y = y_axis))+
   theme(plot.title = element_text(family = "Roboto Condensed", color = "dodgerblue", face = "bold", hjust = 0.5, size = 20))
 
 
-ggsave("text_plot.png", width = 21, height = 12, dpi = 320)
+ggsave("text_plot.png", width = 21, height = 12, dpi = 720)
 
 # Idea generated from Hadley Whickham 'ggplt2: Elegant Graphics for Data Analysis' 
 # https://ggplot2-book.org/annotations.html
