@@ -1,7 +1,16 @@
 # Single Visualizations
 
-In this folder I display assorted single visualizations I created in different contexts and datatsets. Enjoy!  
+In this folder I display assorted single visualizations I created in different contexts and from datatsets. Enjoy!  
 </br>
+
+### Choosing an appropriate font
+*11.05*
+I decided to plot all my available fonts so that I don't have to try a font just to see how it looks. You can always find fonts on [Google fonts](https://fonts.google.com/), download and [install them to windowns](https://www.digitaltrends.com/computing/how-to-install-fonts-in-windows-10/). My personal favorite? ["Roboto Condensed"](https://fonts.google.com/specimen/Roboto+Condensed?preview.text=&preview.text_type=custom&query=roboto+condensed). Plot idea comes from Hadley Wickham's [ggplot 2 book](https://ggplot2-book.org/annotations.html), specifically ch.8.
+[Link to plot code](https://github.com/AmitLevinson/single_visualizations/blob/master/plotting-fonts/font-plot.R) 
+
+<p align="center">
+<img src="plotting-fonts/text_plot.png" width="600">
+</p>
 
 
 ### **A street map of Be'er-Sheva, IL (left) and the city's light posts (right)**  
