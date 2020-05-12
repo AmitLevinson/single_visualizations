@@ -4,8 +4,8 @@ In this folder I display assorted single visualizations I created in different c
 </br>
 
 ### Choosing an appropriate font
-*11.05*
-I decided to plot all my available fonts so that I don't have to try a font just to see how it looks. You can always find fonts on [Google fonts](https://fonts.google.com/), download and [install them to windowns](https://www.digitaltrends.com/computing/how-to-install-fonts-in-windows-10/). My personal favorite? ["Roboto Condensed"](https://fonts.google.com/specimen/Roboto+Condensed?preview.text=&preview.text_type=custom&query=roboto+condensed). Plot idea comes from Hadley Wickham's [ggplot 2 book](https://ggplot2-book.org/annotations.html), specifically ch.8.
+*11.05*  
+I decided to plot all my available fonts so that I don't have to try a font just to see how it looks. You can always find fonts on [Google fonts](https://fonts.google.com/), download and [install them to windowns](https://www.digitaltrends.com/computing/how-to-install-fonts-in-windows-10/). My personal favorite? ["Roboto Condensed"](https://fonts.google.com/specimen/Roboto+Condensed?preview.text=&preview.text_type=custom&query=roboto+condensed). Plot idea comes from Hadley Wickham's [ggplot 2 book](https://ggplot2-book.org/annotations.html), specifically ch.8.  
 [Link to plot code](https://github.com/AmitLevinson/single_visualizations/blob/master/plotting-fonts/font-plot.R) 
 
 <p align="center">
@@ -25,7 +25,7 @@ I mapped the streets of Be'er Sheva thanks to [Christian Burkhart](https://ggplo
 ### **Mapping bomb shelters in Be'er-Sheva, Israel**  
 *12.11.2019*  
 
-In this visualization I mapped the bomb shelters near my neighborhood in Be'er-Sheva. I discovered open data sets from our municpality's website and took the next day's opportunity (missiles fired towards israel) to plot bomb shelters.  
+In this visualization I mapped the bomb shelters near my neighborhood in Be'er-Sheva. I discovered open data sets from our municipality's website and took the next day's opportunity (missiles fired towards Israel) to plot bomb shelters.  
 [Link to code](https://github.com/AmitLevinson/Projects/blob/master/beer_sheva_municipality/mapping_bomb_shelters/shelters_b.R)
 
 <p align = "center">
@@ -35,7 +35,7 @@ In this visualization I mapped the bomb shelters near my neighborhood in Be'er-S
 ### **Eliud Kipchoge unformal marathon record**  
 *12.10.2019*  
 
-In this visulizaiton I took Eliud Kipchoge's marathon score of under 2 hours (1:59:40) and situated it in comparison to previous yearly records.  
+In this visualization I took Eliud Kipchoge's marathon score of under 2 hours (1:59:40) and situated it in comparison to previous yearly records.  
 [Link to code](https://github.com/AmitLevinson/Random_Visualizations/blob/master/Marathon_Records/marathon_runs.R)
 </br>
 
