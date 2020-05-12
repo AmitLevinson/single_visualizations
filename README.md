@@ -9,7 +9,7 @@ I decided to plot all my available fonts so that I don't have to try a font just
 [Link to plot code](https://github.com/AmitLevinson/single_visualizations/blob/master/plotting-fonts/font-plot.R) 
 
 <p align="center">
-<img src="plotting-fonts/text_plot.png" width="600">
+<img src="plotting-fonts/text_plot.png" width="700">
 </p>
 
 
