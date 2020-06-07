@@ -9,7 +9,7 @@ On behalf of [Almog Simchon](https://almogsi.com/)'s course at Ben-Gurion univer
 [(Link to code and exploration)](https://github.com/AmitLevinson/single_visualizations/blob/master/exploring-tt/README.md) 
 
 <p align="center">
-<img src="exploring-tt/plot.png" width="700" height = "650">
+<img src="exploring-tt/plot.png" width="700" height = "850">
 </p>
 
 
