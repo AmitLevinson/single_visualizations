@@ -25,7 +25,7 @@ spotify_songs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascie
 
 ### Exploration
 
-Explore playlist genre by mean duration
+Explore playlist genre by mean duration:
 
 ``` r
 by_duration <- spotify_songs %>%
@@ -41,8 +41,7 @@ ggplot(by_duration, aes(x = year, y= mean_, fill = playlist_genre, color = playl
 
 <img src="README_files/figure-gfm/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 
-That’s bad and unhelpful, let’s try by Explore genre by mean
-danceability:
+That’s not too helpul, let’s try by exploring by mean danceability:
 
 ``` r
 spotify_songs %>%
@@ -188,9 +187,9 @@ ggplot(by_artist, aes(y = track_artist, x = track_popularity))+
 <img src="README_files/figure-gfm/unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
 
 Hmm, again, we see some variance in between bands and artist, for
-example Drake doesn’t have a song too close to the mean. Queen all in
-all have an OK average compared to the rest but with a distribution
-somewhat across it with classics ranked high.
+example Drake doesn’t have a song too close to the mean (the red dot).
+Queen all in all have an OK average compared to the rest but with a
+distribution somewhat across it with classics ranked high.
 
 Let’s turn to look at difference from mean and see if there’s a pattern
 according to when the song was released.

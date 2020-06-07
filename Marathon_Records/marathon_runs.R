@@ -1,5 +1,3 @@
-setwd("")
-
 library(tidyverse)
 library(janitor)
 library(extrafont)
@@ -7,12 +5,10 @@ library(png)
 library(grid)
 library(ggimage)
 library(gridGraphics)
-library(ggthemr)
-ggthemr("flat", type = 'outer')
 
 #After copying the info from wikipedia to a csv.
 df <- read_csv("Runners_records.csv")
-
+year.sub
 #Since i wanted 10 year intervals, i created a vector to subset by
 year.sub <- vector ("double", 11)
 year.sub[1] <- 1921

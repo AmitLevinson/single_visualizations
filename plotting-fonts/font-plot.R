@@ -22,11 +22,11 @@ df <- df %>%
 ggplot(df, aes(x = x_axis, y = y_axis))+
   geom_text(aes(label = f_family), family = f_family, size = 4)+
   theme_void()+
-  labs(title = "Visualizing system and {extrafont} fonts")+
+  labs(title = "Fonts")+
   theme(plot.title = element_text(family = "Roboto Condensed", color = "dodgerblue", face = "bold", hjust = 0.5, size = 20))
 
 
-ggsave("text_plot.png", width = 21, height = 12, dpi = 720)
+ggsave("text_plot.png", width = 21, height = 12, dpi = 520)
 
 # Idea generated from Hadley Whickham 'ggplt2: Elegant Graphics for Data Analysis' 
 # https://ggplot2-book.org/annotations.html
