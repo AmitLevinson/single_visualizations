@@ -3,15 +3,25 @@
 In this folder I display assorted single visualizations I created in different contexts and from datatsets. Enjoy!  
 </br>
 
+### A revisit to #TidyTuesday
+*01.06*  
+On behalf of [Almog Simchon](https://almogsi.com/)'s course at Ben-Gurion university of the Negev We were required to explore and visualize findings from a [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) dataset. My partner and I chose a dataset about spotify songs which I explore in a sub-folder of this repository. Below is the final visualization from the exploration:  
+[(Link to code and exploration)](https://github.com/AmitLevinson/single_visualizations/blob/master/exploring-tt/README.md) 
+
+<p align="center">
+<img src="exploring-tt/plot.png" width="700" height = "650">
+</p>
+
+
+
 ### Choosing an appropriate font
 *11.05*  
 I decided to plot all my available fonts so that I don't have to try a font just to see how it looks. You can always find fonts on [Google fonts](https://fonts.google.com/), download and [install them to windowns](https://www.digitaltrends.com/computing/how-to-install-fonts-in-windows-10/). My personal favorite? ["Roboto Condensed"](https://fonts.google.com/specimen/Roboto+Condensed?preview.text=&preview.text_type=custom&query=roboto+condensed). Plot idea comes from Hadley Wickham's [ggplot 2 book](https://ggplot2-book.org/annotations.html), specifically ch.8.  
-[Link to plot code](https://github.com/AmitLevinson/single_visualizations/blob/master/plotting-fonts/font-plot.R) 
+[(Link to plot code)](https://github.com/AmitLevinson/single_visualizations/blob/master/plotting-fonts/font-plot.R)  
 
 <p align="center">
 <img src="plotting-fonts/text_plot.png" width="700">
 </p>
-
 
 ### **A street map of Be'er-Sheva, IL (left) and the city's light posts (right)**  
 *23.11.2019*  
@@ -29,7 +39,7 @@ In this visualization I mapped the bomb shelters near my neighborhood in Be'er-S
 [Link to code](https://github.com/AmitLevinson/Projects/blob/master/beer_sheva_municipality/mapping_bomb_shelters/shelters_b.R)
 
 <p align = "center">
-<img src="beer_sheva_municipality/mapping_bomb_shelters/shelters_b_eng.png" width = "600">
+<img src="beer_sheva_municipality/mapping_bomb_shelters/shelters_b_heb.png" width = "600">
 </p>  
 
 ### **Eliud Kipchoge unformal marathon record**  
