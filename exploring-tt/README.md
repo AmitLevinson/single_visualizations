@@ -21,6 +21,8 @@ library(ggpomological)
 library(extrafont)
 
 spotify_songs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-21/spotify_songs.csv')
+
+theme_set(theme_light())
 ```
 
 ### Exploration
@@ -35,8 +37,7 @@ by_duration <- spotify_songs %>%
     ungroup()
 
 ggplot(by_duration, aes(x = year, y= mean_, fill = playlist_genre, color = playlist_genre, group = playlist_genre))+
-    geom_line()+
-    theme_light()
+    geom_line()
 ```
 
 <img src="README_files/figure-gfm/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
@@ -50,8 +51,7 @@ spotify_songs %>%
   summarise_at(vars(danceability),list(mean_ = mean, sd_ = sd)) %>% 
   ungroup() %>% 
   ggplot(aes(x = year, y= mean_, fill = playlist_genre, color = playlist_genre, group = playlist_genre))+
-  geom_line()+
-  theme_light()
+  geom_line()
 ```
 
 <img src="README_files/figure-gfm/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
@@ -179,9 +179,7 @@ by_artist_mean <- by_artist %>%
 
 ggplot(by_artist, aes(y = track_artist, x = track_popularity))+
   geom_point()+
-  geom_point(data = by_artist_mean, aes(y = track_artist, x = popularity), color = "red")+
-    theme(
-      panel.background = element_blank())
+  geom_point(data = by_artist_mean, aes(y = track_artist, x = popularity), color = "red")
 ```
 
 <img src="README_files/figure-gfm/unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
