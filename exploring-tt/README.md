@@ -3,6 +3,17 @@ Exploring spotify songs
 Amit Levinson
 6/1/2020
 
+## What is this?
+
+This is an assignment on behalf of [Almog
+Simchon](https://almogsi.com/)’s course at Ben-Gurion university of
+the Negev. We were required to explore and visualize findings from a
+[\#TidyTuesday](https://github.com/rfordatascience/tidytuesday) dataset.
+My partner and I chose data about spotify songs which I explore below.
+Skip to the end if you’re interested in the final visualization.
+
+### Libraries
+
 ``` r
 library(tidyverse)
 library(lubridate)
@@ -11,6 +22,8 @@ library(extrafont)
 
 spotify_songs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-21/spotify_songs.csv')
 ```
+
+### Exploration
 
 Explore playlist genre by mean duration
 
