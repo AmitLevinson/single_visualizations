@@ -80,7 +80,7 @@ map_gold
 ggsave("streets_of_b7.png", width = 5, height = 7)
 
 
-#Thanks to Chris' blog post on introducing us the plot:
+#Thanks to Chris' blog post on introducing me to the plot:
 #https://ggplot2tutor.com/streetmaps/streetmaps/
 #and to Connor Rothschild's blog post on adding a frame and text:
 #https://connorrothschild.github.io/r/map-springfield/
