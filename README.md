@@ -9,6 +9,17 @@ In this folder I display assorted single visualizations I created in different c
 Anyways, enjoy!  
 </br>
 
+### An example of patchwork
+*16.06*  
+I shared on Linkedin the amazing features of [patchwork](https://patchwork.data-imaginist.com/index.html) and decided to share it here too if you stumble upon it. patchwork is an R package for combining several ggplots by Thomas Lin Pedersen with an easy and simple syntax. If you're looking for something to combine several ggplots into one graphic check it out!
+
+[(Link to code)](https://github.com/AmitLevinson/single_visualizations/blob/master/patchwork-example/pactchwork-eg.R) 
+
+<p align="center">
+<img src="patchwork-example/p.png" width="700">
+</p>
+
+
 ### A revisit to #TidyTuesday
 *01.06*  
 On behalf of [Almog Simchon](https://almogsi.com/)'s course at Ben-Gurion university of the Negev We were required to explore and visualize findings from a [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) dataset. My partner and I chose a dataset about spotify songs which I explore in a sub-folder of this repository. Below is the final visualization from the exploration:  
