@@ -31,8 +31,6 @@ p <- p2 + p1 / p3
 p <- p + 
   plot_annotation(
   title = "Patchwork - Combine separate ggplots",
-  subtitle = "Patchwork is an R package that makes combining separate ggplots into one single graphic easy.\nIt's done with a very intuitive syntax such as p2 + p1 / p3 for the graphic below.")+
-  guide_area() +
-  plot_layout(guides = 'collect')
+  subtitle = "Patchwork is an R package that makes combining separate ggplots into one single graphic easy.\nIt's done with a very intuitive syntax such as p2 + p1 / p3 for the graphic below.")
 
 ggsave("p.png", p, width = 10, height = 6)
