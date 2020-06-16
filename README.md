@@ -11,7 +11,7 @@ Anyways, enjoy!
 
 ### An example of patchwork
 *16.06*  
-I shared on Linkedin the amazing features of [patchwork](https://patchwork.data-imaginist.com/index.html) and decided to share it here too if you stumble upon it. patchwork is an R package for combining several ggplots by Thomas Lin Pedersen with an easy and simple syntax. If you're looking for something to combine several ggplots into one graphic check it out!
+I shared on Linkedin the amazing features of [patchwork](https://patchwork.data-imaginist.com/index.html) and decided to share it here too if you stumble upon it. patchwork is an R package for combining several ggplots by [Thomas Lin Pedersen](https://www.data-imaginist.com/) with an easy and simple syntax. If you're looking for something to combine several ggplots into one graphic check it out!
 
 [(Link to code)](https://github.com/AmitLevinson/single_visualizations/blob/master/patchwork-example/pactchwork-eg.R) 
 
