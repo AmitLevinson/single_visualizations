@@ -9,6 +9,18 @@ In this folder I display assorted single visualizations I created in different c
 Anyways, enjoy!  
 </br>
 
+
+### Happy holiday word-cloud
+*18.09.2020*
+For the new Jewish year I created a word-cloud from our [Israel 2050 ](https://israel2050.co.il/en/home/) whatsapp chat group. Once you have the word-cloud set up you can easily make it for other groups which I did. No chats are provided in this repo, but checkout the [rwhatsapp package](https://github.com/JBGruber/rwhatsapp) that helps with all the heavy lifting and guide you through the process (which is really easy).
+[(Link to code)](https://github.com/AmitLevinson/single_visualizations/blob/master/whatsapp-word-cloud/random-word-clouds.Rmd)
+
+<p align="center">
+<img src="whatsapp-word-cloud/chag-sameach-with-logo.jpg" width="700">
+</p>
+
+
+
 ### An example of patchwork
 *16.06*  
 I shared on Linkedin the amazing features of [patchwork](https://patchwork.data-imaginist.com/index.html) and decided to share it here too if you stumble upon it. patchwork is an R package for combining several ggplots by [Thomas Lin Pedersen](https://www.data-imaginist.com/) with an easy and simple syntax. If you're looking for something to combine several ggplots into one graphic check it out!
