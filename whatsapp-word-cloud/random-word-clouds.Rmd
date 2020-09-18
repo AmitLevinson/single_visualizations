@@ -58,33 +58,33 @@ chat_total <- chat_count %>%
 attempt <- letterCloud(chat_total, word = "חג שמח", size = 1.25)
 
 # Save as an html widget then open it, let it load and right click 'save image'.
-saveWidget(trial,"chag-sameach.html",selfcontained = F)
+saveWidget(attempt,"chag-sameach.html",selfcontained = F)
 
 ```
 
 ### Similar, only with words in Hebrew
+
 
 ```{r}
 chat_count <- chat %>% 
   unnest_tokens(word,text) %>% 
   count(word, sort = T) 
 
-he_regex_exclude <- c("preposition","pronoun","negation", "conjunction", "interrogative")
-stopwords_he_vec <- stopwords_he %>% 
-  filter(str_detect(POS, he_regex_exclude)) %>% 
-  pull(Undotted)
-
 chat_total <- chat_count %>% 
+  # Remove Hebrew stopwords
   filter(!word %in% he_stopwords) %>% 
-  #anti_join(chat_count, stopwords_he %>% filter(str_detect(POS, he_regex_exclude)), by = c("word" = "Undotted")) %>% 
-  filter(n> 4,
+  # set a minimum frequency
+  filter(n > 3,
+         # Remove English words
          str_detect(word, "^[^a-zA-Z]"),
+         # Remove words that are only numbers
          str_detect(word, "[^\\d]")) %>% 
+  #'Normalize' the values
   mutate(n = round(n*0.8))
 
 attempt <- letterCloud(chat_total, word = "חג שמח", size = 1.25)
 
 # Save as an html widget then open it, let it load and right click 'save image'.
-saveWidget(trial,"chag-sameach.html",selfcontained = F)
+saveWidget(attempt,"chag-sameach.html",selfcontained = F)
 ```
 
