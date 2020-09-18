@@ -12,7 +12,7 @@ Anyways, enjoy!
 
 ### Happy holiday word-cloud
 *18.09.2020*
-For the new Jewish year I created a word-cloud from our [Israel 2050 ](https://israel2050.co.il/en/home/) whatsapp chat group. Once you have the word-cloud set up you can easily make it for other groups which I did. No chats are provided in this repo, but checkout the [rwhatsapp package](https://github.com/JBGruber/rwhatsapp) that helps with all the heavy lifting and guide you through the process (which is really easy).
+For the new Jewish year I created a word-cloud from our [Israel 2050 ](https://israel2050.co.il/en/home/) whatsapp chat group. Once you have the word-cloud set up you can easily make it for other groups which I did. I was having issues doing everything in R so I exported it to html and manually saved it. The logo and light-blue bar was also manually added. No chats are provided in this repo, but checkout the [rwhatsapp package](https://github.com/JBGruber/rwhatsapp) that helps with all the heavy lifting and guide you through the process (which is really easy).
 [(Link to code)](https://github.com/AmitLevinson/single_visualizations/blob/master/whatsapp-word-cloud/random-word-clouds.Rmd)
 
 <p align="center">
