@@ -1,0 +1,90 @@
+---
+title: "Israel 2050"
+author: "Amit Levinson"
+date: "9/4/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(tidytext)
+library(here)
+#remotes::install_github("JBGruber/rwhatsapp")
+library(rwhatsapp)
+library(readxl)
+library(wordcloud2)
+library(htmlwidgets)
+```
+
+
+```{r}
+# Set compatible for Hebrew characters
+Sys.setlocale("LC_ALL", "Hebrew")
+
+# Read file
+chat <- rwa_read(here("chats","israel2050.txt"))
+he_stopwords <- read_csv("https://raw.githubusercontent.com/AmitLevinson/Datasets/master/Stopwords/he_stopwords.csv")
+
+head(chat)
+```
+
+### For text with words in English that are also relevant
+
+```{r}
+chat_count <- chat %>% 
+  unnest_tokens(word,text) %>% 
+  count(word, sort = T) 
+
+chat_total <- chat_count %>% 
+  # Remove Hebrew stopwords
+  filter(!word %in% he_stopwords) %>% 
+  # Remove english stopwords
+  anti_join(stop_words) %>% 
+  # set a minimum frequency
+  filter(n > 3,
+         # Remove words that are only numbers
+         str_detect(word, "[^\\d]"),
+         # Remove something you forgot from the original stopwords files
+         !str_detect(word, "היי")) %>% 
+  # 'Normalize' the values
+  mutate(n = round(n*0.8))
+
+attempt <- letterCloud(chat_total, word = "חג שמח", size = 1.25)
+
+# Save as an html widget then open it, let it load and right click 'save image'.
+saveWidget(trial,"chag-sameach.html",selfcontained = F)
+
+```
+
+### Similar, only with words in Hebrew
+
+```{r}
+chat_count <- chat %>% 
+  unnest_tokens(word,text) %>% 
+  count(word, sort = T) 
+
+he_regex_exclude <- c("preposition","pronoun","negation", "conjunction", "interrogative")
+stopwords_he_vec <- stopwords_he %>% 
+  filter(str_detect(POS, he_regex_exclude)) %>% 
+  pull(Undotted)
+
+chat_total <- chat_count %>% 
+  filter(!word %in% he_stopwords) %>% 
+  #anti_join(chat_count, stopwords_he %>% filter(str_detect(POS, he_regex_exclude)), by = c("word" = "Undotted")) %>% 
+  filter(n> 4,
+         str_detect(word, "^[^a-zA-Z]"),
+         str_detect(word, "[^\\d]")) %>% 
+  mutate(n = round(n*0.8))
+
+attempt <- letterCloud(chat_total, word = "חג שמח", size = 1.25)
+
+# Save as an html widget then open it, let it load and right click 'save image'.
+saveWidget(trial,"chag-sameach.html",selfcontained = F)
+```
+
