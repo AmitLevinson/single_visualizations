@@ -15,11 +15,11 @@ ggplot() +
   # Create equal boundaries on each side
   ylim(5, 25)+
   xlim(0, 90)+
-  # Use coloumn values as fill values :)!
+  # Use coloumn values as fill values :)
   scale_fill_identity()+
-  theme_void() 
+  theme_void()
   # If you want to add a label then:
-  # annotate("text", x = 89.9, y = 5.3, label = "@Amit_Levinson", hjust = 1, size = 3, color = "gray20")
+  # annotate("text", x = 89.9, y = 5.35, label = "@Amit_Levinson", hjust = 1, size = 3, color = "gray20")
 
 ggsave("random-geoms/same-color.png", width = 8, height = 5, bg = "transparent")
 
