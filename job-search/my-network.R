@@ -12,12 +12,12 @@ library(ggimage)
 me <- 1
 
 # The second circle vector
-close_circle_vec <- 2:55
+close_circle_vec <- 2:52
 
-# Create a disttribution of various types of individuals in the network
-type <- sample(c("Sharer", "Non-sharing", "employer"), size = length(close_circle_vec), replace = TRUE, prob = c(0.50,0.45,0.05))
+# Create a distribution of various types of individuals in the network
+type <- sample(c("Sharer", "Non-sharing", "employer"), size = length(close_circle_vec), replace = TRUE, prob = c(0.55,0.40,0.05))
 
-# Close circle network
+# Now create the close circle network
 close_circle <- tibble(name = 1,
                        to = close_circle_vec, 
                        type = type)
@@ -41,7 +41,7 @@ get_friends <- function(x) {
   return(df_level2)
 }
 
-# Get 2nd (outer) circle connected to sharers with an iterated map function
+# Iterate to get the 2nd (outer) circle connected to sharers
 outer_circle <- map_dfr(outer_circle_vec , get_friends)
 
 # Again, each node receives a 'type' to show how they behave in the network
@@ -62,12 +62,12 @@ both_info <- rbind(close_circle, outer_circle) %>%
 all_network <- both_info %>% 
   as_tbl_graph()
 
-#Add info for the nodes (wasn't evident in the first tbl_graph)
+# Create info for the nodes (wasn't evident in the first tbl_graph)
 node_info <- both_info %>%
   select(-name) %>%
   distinct()
 
-# Add info to the nodes (who does what - share, not-share & employer)
+# Now add info to the nodes (who does what - share, not-share & employer)
 edited_graph <- all_network %>% 
   activate(nodes) %>% 
   mutate(name = as.integer(name)) %>% 
@@ -100,7 +100,7 @@ network_text <- "<span style='color:#15616D'>NET</span><span style='color:gray65
 
 ggraph(edited_graph, layout = "focus", focus = 1)+
   geom_edge_link(aes(edge_width = factor(is_employer)), color = "gray85", show.legend = FALSE)+
-  geom_node_point(aes(filter = (name !=1), color = type), shape = 19, size = 2.75, show.legend = FALSE)+
+  geom_node_point(aes(filter = (name !=1), color = type), shape = 19, size = 3.5, show.legend = FALSE)+
   # image in the middle
   geom_image(aes(x = 0, y = 0, image = circle_me), size = 0.05)+
   # Add node color
@@ -123,15 +123,14 @@ ggraph(edited_graph, layout = "focus", focus = 1)+
     plot.margin = margin(2,2,2,2, "mm")
   )
 
-
+  
 # Save
 ggsave("job-search/network.png", width = 13, height = 10, dpi = 500)
 
 
-# Credits!
+# Some useful tutorials!
 # For working with network data (Amazing blog post):
 # http://mr.schochastics.net/netVizR.html
 
 # For making the image circular see Jake Kaupp's TidyTuesday
 # https://github.com/jkaupp/tidytuesdays/blob/master/2020/week50/R/analysis.R
-
