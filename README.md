@@ -9,6 +9,17 @@ In this folder I display assorted single visualizations I created in different c
 Anyways, enjoy!  
 </br>
 
+### Distance to various points
+*17.01.2021* 
+I'm working on a new blog post that includes calculating distances from a point to some other points. It was my first time diving deeper (than I'm used to) in to the `{sf}` R package.
+
+[Link to Code](https://github.com/AmitLevinson/single_visualizations/blob/master/point-distance/point_distance.R)
+
+<p align="center">
+<img src="point-distance/distances.png" width="700">
+</p>
+
+
 
 ### Happy holiday word-cloud
 *18.09.2020*  
