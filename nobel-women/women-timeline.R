@@ -119,15 +119,21 @@ title_df <- data.frame(x = 1900, y = 20, label = "<span style='font-size:16mm; f
 
 
 ggplot(women_table)+
+  # Add line to each image
   geom_segment(aes(x = Year, xend = Year, y = 0, yend = ifelse(ymax > 0, ymax -0.75, ymax + 0.75)), color = "gray65", linetype = "dashed", size = 0.3)+
+  # Add images of women
   geom_image(aes(x = Year, y = ymax, image = img_file), size = 0.025)+
+  # Add line in middle for a year axis
   geom_segment(aes(x = 1900, xend = 2020, y = 0, yend = 0), color = "gray25", size = 0.5)+
+  # Add 'ticks' for the years
   geom_segment(data = year_labels, aes(x = x, xend = x, y = 0, yend = -0.25), color = "gray35", size = 0.5)+
   xlim(c(1900,2020))+
+  # Add year text
   geom_text(year_labels, mapping = aes(x =x, y= y, label = text), family = "Open Sans", color = "gray35", size = 3.5)+
-  #geom_text(aes(x = 1900, y = -24, label = "Data: Wikipedia\nViz: @Amit_Levinson"), color = "gray65", size = 3, hjust = 0,family = "Open Sans")+
+  # Add title and subtitle
   geom_richtext(data = title_df, aes(x = x, y =y, label = label), size = 6, hjust = 0, label.size = NA, fill = NA)+
   labs(caption = "Data: Wikipedia\nViz: @Amit_Levinson")+
+  # Change ratio of plot for nicer circles
   coord_fixed(ratio = 2.35/1 ,clip = "off")+
   theme_void()+
   theme(
