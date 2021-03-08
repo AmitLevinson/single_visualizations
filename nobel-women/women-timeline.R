@@ -47,7 +47,7 @@ if (!dir.exists("img")){
   mask <- image_read("mask.png") %>% 
     image_scale("100") 
   
-  
+  # Reading all images from wikipedia
   walk2(img_links, women_table_raw$img_name, ~ {
     # Read the image
     image_read(.x) %>%
@@ -63,9 +63,7 @@ if (!dir.exists("img")){
 }
 
 
-
 # More Data processing --------------------------------------------------------
-
 
 # Read images into column
 women_table <- women_table_raw %>% 
@@ -74,7 +72,7 @@ women_table <- women_table_raw %>%
          # Make sure year is recognized as numeric
          Year = as.numeric(Year))
 
-# Extract distinct group id for each year
+# Extract distinct group id for each year for spaces of circles
 women_table$pos <- women_table %>% 
   group_by(Year) %>% 
   group_indices(Year)
@@ -82,40 +80,39 @@ women_table$pos <- women_table %>%
 # add spaces where more than 1 winner for a given year
 multiples <- seq(6, 30, by = 6)
 
-
 women_table <- women_table %>%  
   # Have segment start at 0
   mutate(ymin = 0) %>% 
-  # Count how many years for each year
+  # Count how frequency of each year
   add_count(pos) %>% 
   group_by(pos) %>% 
-  # if more than one winner in a year, give them one of the values
+  # Give all the same spaces, whereas if 
+  # if more than one winner in a year, give them one of the other values
   # from the 'multiples' vector
   mutate(ymax = multiples[1:n]) %>% 
   ungroup() %>% 
   mutate(
-    # Create spaces where winners appear next to one another in plot
+    # Create spaces where winners appear next to one another in plot (when someone won 2 years ago)
     ymax = case_when(
       Year - lag(Year, 2) == 2 ~ ymax - 3,
       Year - lag(Year,2 ) ==2 & Year - lead(Year,2) == 2 ~ ymax + 3,
       TRUE ~ ymax),
-    # have winner be either below line or above line
+    # have winner be either below horizontal yaer line or above
     ymax = ifelse(pos %% 2 == 1, ymax, ymax *-1),
-    # Manually change 2020 which overlaps with 2018
+    # Manually change 2020 which overlaps too closely with 2018
     ymax = ifelse(Year == 2020 & ymax < -3, ymax +3, ymax))
-
 
 
 # Plot Prep ---------------------------------------------------------------
 
-
+# Labels for the x-axis years
 year_labels <- data.frame(x = seq(1900,2020,20),
                           y = -0.7,
                           text = c("1900", paste0(seq(20,80,20), "'"), "2000", "20'"))
 
 
 # Create a customized title to insert in the plot itself
-title_df <- data.frame(x = 1900, y = 20, label = "<span style='font-size:16mm; font-family: \"Bodoni MT\"'> Female Nobel Laureates</span><br><span style='font-size:6mm; color:gray40'>Women who won the Nobel Prize from 1903-2020.<br> A total of 57 distinct women</span>")
+title_df <- data.frame(x = 1900, y = 20, label = "<span style='font-size:16mm; font-family: \"Bodoni MT\"'> Female Nobel Laureates</span><br><span style='font-size:6mm; color:gray40'>Women who won the Nobel Prize from 1900-2020.<br> A total of 57 distinct women.</span>")
 
 
 ggplot(women_table)+
