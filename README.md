@@ -11,8 +11,10 @@ Anyways, enjoy!
 
 
 ### International Women's Day (IWD)
-*08.03.2021* 
-Decided to celebrate IWD by plotting all 57 female winning the Nobel Prize. Data and images were collected from Wikipedia and the full reproducible code can  be found below.
+*08.03.2021*  
+
+Decided to celebrate IWD by plotting all 57 female winning the Nobel Prize. Data and images were collected from Wikipedia and the full reproducible code can  be found below.  
+
 [Link to Code](https://github.com/AmitLevinson/single_visualizations/blob/master/point-distance/point_distance.R)
 
 <p align="center">
