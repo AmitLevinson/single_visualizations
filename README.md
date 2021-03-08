@@ -15,7 +15,7 @@ Anyways, enjoy!
 
 Decided to celebrate IWD by plotting all 57 female winning the Nobel Prize. Data and images were collected from Wikipedia and the full reproducible code can  be found below.  
 
-[Link to Code](https://github.com/AmitLevinson/single_visualizations/blob/master/point-distance/point_distance.R)
+[Link to Code](https://github.com/AmitLevinson/single_visualizations/blob/master/nobel-women/women-timeline.R)
 
 <p align="center">
 <img src="nobel-women/nobel-women.png" width="700" alt="plot of women winning the nobel prize">
@@ -25,6 +25,7 @@ Decided to celebrate IWD by plotting all 57 female winning the Nobel Prize. Data
 
 ### Distance to various points
 *17.01.2021* 
+
 I'm working on a new blog post that includes calculating distances from a point to some other points. It was my first time diving deeper (than I'm used to) in to the `{sf}` R package.
 
 [Link to Code](https://github.com/AmitLevinson/single_visualizations/blob/master/point-distance/point_distance.R)
