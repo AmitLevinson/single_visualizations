@@ -138,7 +138,7 @@ p <- ggplot(israel_tiles)+
     text = element_text(family = "Open Sans"),
     plot.title = element_text(size = 32, face = "bold", family = "Noto Serif", hjust = 0),
     plot.subtitle = element_markdown(size =19, color = "gray25"),
-    plot.caption = element_text(color = "gray60", hjust = 0.5, size = 11),
+    plot.caption = element_text(color = "gray50", hjust = 0.5, size = 11),
     plot.margin = margin(8,6,6,8,"mm"),
     # For some odd reason, not speciyging this creates a transparent bg!
     plot.background = element_rect(fill = "white", color = NA)
