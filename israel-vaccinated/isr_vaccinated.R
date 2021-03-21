@@ -1,3 +1,6 @@
+# Inspiration from Cedric Scherer previous TidyTuesday submission of Canada's Trubines:
+# https://github.com/Z3tt/TidyTuesday/blob/master/R/2020_44_CanadianWindTurbines.Rmd
+
 library(sf)
 library(dplyr)
 library(raster)
@@ -101,9 +104,9 @@ text_pos <- data.frame(
   x = ver_bars$xend + 4e3,
   group_color = aes_details$group_color,
   # Create label using {glue} and the downloaded df so it's easy to update when necessary
-  label = c(glue("{round(isr_data$nonvac/1e6, 2)}M individuals<br><span style='color:gray50'><b>did not yet<br>vaccinate ({round({1 - isr_data$percent_first}*100, 1)}%)</b></span>"),
-            glue("{round(isr_data$first/1e6, 2)}M individuals<br>received <span style='color:{aes_details$group_color[2]}'><b>first<br>vaccination ({round({isr_data$percent_first}*100, 1)}%)</b></span>"),
-            glue("{round(isr_data$second/1e6, 2)}M<br>individuals<br>were<br><span style='color:{aes_details$group_color[3]}'><b>vaccinated<br>twice<br>({round({isr_data$percent_second}*100, 1)}%)</b></span>")
+  label = c(glue("{round(isr_data$nonvac/1e6, 1)}M individuals<br><span style='color:gray50'><b>did not yet receive<br>vaccination ({round({1 - isr_data$percent_first}*100, 1)}%)</b></span>"),
+            glue("{round(isr_data$first/1e6, 1)}M individuals<br>received <span style='color:{aes_details$group_color[2]}'><b>first<br>vaccination ({round({isr_data$percent_first}*100, 1)}%)</b></span>"),
+            glue("{round(isr_data$second/1e6, 1)}M<br>individuals<br>were<br><span style='color:{aes_details$group_color[3]}'><b>vaccinated<br>twice<br>({round({isr_data$percent_second}*100, 1)}%)</b></span>")
   )) 
 
 
