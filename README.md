@@ -9,6 +9,18 @@ In this folder I display assorted single visualizations I created in different c
 Anyways, enjoy!  
 </br>
 
+### Israel's Vaccine Admission
+*21.03.2021*  
+
+An attempt at visualizing Israel's population vaccine admission. Inspiration is from [Cedric Scherer](https://www.cedricscherer.com/) previous TidyTuesday contribution ([Code](https://github.com/Z3tt/TidyTuesday/blob/master/R/2020_44_CanadianWindTurbines.Rmd) | [Plot](https://raw.githubusercontent.com/Z3tt/TidyTuesday/master/plots/2020_44/2020_44_CanadianWindTurbines_h.png))
+
+[Link to Code](https://github.com/AmitLevinson/single_visualizations/blob/master/israel-vaccinated/isr_vaccinated.R)
+
+<p align="center">
+<img src="israel-vaccinated/israel-vaccinated.png" width="700" alt="Map of Israel filled with vaccinated individuals as portion">
+</p>
+
+
 
 ### International Women's Day (IWD)
 *08.03.2021*  
