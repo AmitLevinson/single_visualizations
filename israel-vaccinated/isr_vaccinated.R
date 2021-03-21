@@ -130,7 +130,7 @@ p <- ggplot(israel_tiles)+
   scale_x_continuous(limits = c(min(pct_labels$start_line) - 1e4,max(text_pos$x) + 8e4))+
   scale_fill_manual(values = c( "nonvac" = "gray65" ,"first" = "#85CC6F", "second" = "#337B24"))+
   labs(title = "Israel's Vaccine Admission",
-       subtitle = glue("With a population of {round(isr_data$population/1e6, 1)}M, <b><span style='color:{aes_details$group_color[3]}'>{round(isr_data$second/1e6, 1)}M Israelis ({round(isr_data$percent_second*100, 1)}%) were already vaccinated<br>twice</span></b>. Color represents portion of group out of the whole shape, and not<br>of where vaccinated individuals reside."),
+       subtitle = glue("With a population of {round(isr_data$population/1e6, 1)}M, <b><span style='color:{aes_details$group_color[3]}'>{round(isr_data$second/1e6, 1)}M Israelis ({round(isr_data$percent_second*100, 1)}%) were already<br>vaccinated twice</span></b>. Color represents portion of group out of the<br>whole shape, and not of where vaccinated individuals reside."),
        # Take the most up to date from the isr_data df we created above
        caption = glue("Data: OurWorldInData | {format(isr_data$date, '%B %d, %Y')} | Viz: @Amit_Levinson"))+
   theme_void()+
@@ -139,7 +139,9 @@ p <- ggplot(israel_tiles)+
     plot.title = element_text(size = 32, face = "bold", family = "Noto Serif", hjust = 0),
     plot.subtitle = element_markdown(size =18, color = "gray25"),
     plot.caption = element_text(color = "gray60", hjust = 0.5, size = 11),
-    plot.margin = margin(8,6,6,8,"mm")
+    plot.margin = margin(8,6,6,8,"mm"),
+    # For some odd reason, not speciyging this creates a transparent bg!
+    plot.background = element_rect(fill = "white", color = NA)
   )
 
 ggsave("israel-vaccinated/israel-vaccinated.png", p, height = 13, width = 10)
