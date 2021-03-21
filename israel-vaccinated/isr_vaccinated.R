@@ -116,7 +116,7 @@ p <- ggplot(israel_tiles)+
   # Segments representing the y axis percentages
   geom_segment(data = pct_labels , aes(x = start_line, xend = end_line, y = y, yend = y), color = "gray80", linetype = "dashed")+
   # Percent labels
-  geom_text(data = pct_labels,aes(x = start_line - 8.5e3, y = y, label = point_to_label), size = 4.5, color = "gray70", family = "Open Sans")+
+  geom_text(data = pct_labels,aes(x = start_line - 8.5e3, y = y, label = point_to_label), size = 4.5, color = "gray60", family = "Open Sans")+
   # vertical bars on the side for each group
   geom_segment(data = ver_bars, aes(x = xend, xend = xend, y = y- 2000, yend = yend), color = "gray70")+
   # horizontal bars with the *minimum* y value (y at minimum for each group)
@@ -137,7 +137,7 @@ p <- ggplot(israel_tiles)+
   theme(
     text = element_text(family = "Open Sans"),
     plot.title = element_text(size = 32, face = "bold", family = "Noto Serif", hjust = 0),
-    plot.subtitle = element_markdown(size =18, color = "gray25"),
+    plot.subtitle = element_markdown(size =19, color = "gray25"),
     plot.caption = element_text(color = "gray60", hjust = 0.5, size = 11),
     plot.margin = margin(8,6,6,8,"mm"),
     # For some odd reason, not speciyging this creates a transparent bg!
