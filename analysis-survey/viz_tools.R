@@ -50,9 +50,7 @@ t_count <- tools_used %>%
 # count the edges
 edges_df <- select(t_count, -id) %>% 
   count(nodea, nodeb)
-edges_df %>% 
-  mutate(n/n_distinct(tools_used$id)) %>% 
-  View()
+
 
 # Create vertices
 # New data frame including id in one column and names in another
