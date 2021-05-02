@@ -11,24 +11,28 @@ da_survey <- read_xlsx("analysis-survey/da_survey_2021.xlsx")
 #Sys.setlocale("LC_ALL", "Hebrew")
 
 
-# Get all file names that might have R code
-
+# Colelct data, available from the 'Data Analytics Facebook group"
 tools_used <- da_survey %>% 
+  # Select relevant column
   select(id, tools = 19) %>% 
   filter(!is.na(tools)) %>% 
+  # Filter responses of tools used
   separate_rows(tools, sep = ",") %>% 
+  # Clean some responses
   mutate(tools = gsub("(\"|\\s)", "", tools),
+         # clean specific cases of r packages and python
          tools = as.factor(case_when(
            grepl("ויזא", tools) ~ "I don't do\ndata visualization",
            grepl("Jupyter|Python", tools) ~ "Python",
            grepl("(ggplot|(^[R]$))", tools) ~ "R",
            TRUE ~ tools
          )))  %>% 
+  # Lump some groups together
   mutate(tools = fct_lump_min(tools, 2),
+         # revert to character
          tools = as.character(tools))
 
-# Basically we're left with solving the 'handshake problem', creating a distinct combination
-# between all tools ('who shaked hands with who')
+# We'll work to create a network graph from one tool to another
 t_count <- tools_used %>% 
   group_by(id) %>% 
   # Create combinations
