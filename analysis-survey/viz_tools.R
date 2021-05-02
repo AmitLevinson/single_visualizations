@@ -39,8 +39,8 @@ t_count <- tools_used %>%
   expand(from = tools,to = tools) %>% 
   # First filter of dupliace values
   filter(from != to) %>% 
-  # Here's the tricky part using new columns as a way to reorder the values by a.b.c... and then filtering
-  # duplicates using distinct.
+  # Using new columns as a way to reorder the values by a.b.c... and then filtering
+  # duplicates using distinct. This gets us te relevant combination of tools :)
   transmute(nodea = ifelse(from < to, from, to),
             nodeb = ifelse(from > to, from , to)) %>% 
   distinct(id, nodea,nodeb) %>% 
@@ -50,6 +50,9 @@ t_count <- tools_used %>%
 # count the edges
 edges_df <- select(t_count, -id) %>% 
   count(nodea, nodeb)
+edges_df %>% 
+  mutate(n/n_distinct(tools_used$id)) %>% 
+  View()
 
 # Create vertices
 # New data frame including id in one column and names in another
@@ -72,32 +75,33 @@ t_ggraph <- graph_from_data_frame(edges_df,
 # Plot
 p1 <- ggraph(t_ggraph, layout="stress")+
   geom_edge_link0(aes(edge_width = n), edge_colour = "gray65", alpha = 0.7)+
-  geom_node_point(aes(size = pct), shape=19)+
-  geom_node_text(aes(label=name, vjust = vjust), lineheight = 0.9,  repel=F, size = 5, family = "Raleway")+
+  geom_node_point(aes(size = pct), shape=19, color = "gray55")+
+  geom_node_text(aes(label=name, vjust = vjust), lineheight = 0.9,  repel=F, size = 5, family = "Open Sans")+
   labs(title = paste("\nשילובי כלים"),
        subtitle = paste0("\u202B",
-                         "גרף רשתי של כלי וויזואליזציה בהם אנליסטים משתמשים. ",
-                         "עובי הקווים מייצג את שכיחות המופעים של הכלים יחד במסגרת תשובה של נסקר. ", 
+                         "גרף רשתי של כלי וויזואליזציה שאנליסטים ציינו כי הם משתמשים בהם במסגרת עבודתם. ",
+                         "עובי הקווים מייצג את שכיחות המופעים של הכלים", 
                          "\n",
                          "\u202B",
-                         "גודל הנקודות מייצג את שכיחות הכלי בקרב כלל הנסקרים."))+
+                         "יחד מתוך כלל תשובות המשיבים (ניתן היה לבחור יותר מכלי אחד). ",
+                         "\u202B",
+                         "גודל הנקודות מייצג את שכיחות הכלי בקרב כלל המשיבים."))+
   guides(size = "none",
-         edge_width = guide_legend("שכיחות הופעה יחד", title.position = "right"))+
+         edge_width = guide_legend("שכיחות מופעים יחד", title.position = "right"))+
   theme(
     text = element_text(family = "Open Sans Hebrew"),
     plot.title = element_text(hjust = 1, face = "bold", size = 16),
-    plot.subtitle = element_text(hjust = 1, size = 14, color = "gray25"),
+    plot.subtitle = element_text(hjust = 1, size = 15, color = "gray20", lineheight = 1.1),
     legend.position= "top",
     legend.direction = "horizontal",
-    legend.text = element_text(size = 9),
-    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 9, color = "gray30"),
+    legend.title = element_text(size = 12, color = "gray30"),
     legend.key=element_blank(),
     panel.background = element_rect(fill = "white", color = "white"),
     plot.background = element_rect(fill = "white", color = "white"),
     plot.caption = element_text(size = 10, color = "gray35", hjust = 1)
   )+
   coord_cartesian(clip = "off")
-
 
 # Second plot - Frequency of tool -----------------------------------------
 
@@ -121,7 +125,7 @@ p1 <- ggraph(t_ggraph, layout="stress")+
   theme_minimal()+
   theme(
     text = element_text(family = "Open Sans Hebrew"),
-    plot.title = element_text(hjust = 1, face = "bold", size = 14),
+    plot.title = element_text(hjust = 1, face = "bold", size = 15),
     axis.text.x = element_text(size = 12),
     axis.text.y = element_text(size = 10, color = "gray25"),
     panel.grid.major.x = element_blank(),
@@ -138,15 +142,15 @@ p1 <- ggraph(t_ggraph, layout="stress")+
 p1/p2+
   plot_layout(height = c(2,1))+
   # plot_layout(guides = 'collect')+
-  plot_annotation(title = paste0("\u202B","\"איזה כלי ויזואלזציה את/ה משתמש/ת לרוב?\""), 
-                  subtitle = paste0("\u202B", "ניתוח תשובותיהם של 318 משיבים לשאלה אודות כלי וויזואליזציה מתוך הסקר 'מקצוע דאטה אנליסט'."),
+  plot_annotation(title = paste0("\u202B","\"איזה כלי ויזואלזציה את משתמשת לרוב?\""), 
+                  subtitle = paste0("\u202B", "ניתוח תשובותיהם של 318 משיבים לשאלה על שימוש בכלי וויזואליזציה מתוך הסקר 'מקצוע דאטה אנליסט'."),
                   caption = paste0("\u202B", "נתונים: רביע, סיוון ויובל במסגרת קבוצת Data Analytics Israel | וויזואליזציה: עמית לוינסון"),
                   theme = theme(plot.title = element_text(size = 20, face = "bold"),
                                 plot.subtitle = element_text(size = 15))) &
   theme(text = element_text('Open Sans Hebrew'),
         plot.title = element_text(face = "bold", hjust = 1),
         plot.subtitle = element_text(hjust = 1),
-        plot.margin = unit(c(2,2,4,2), "mm"),
+        plot.margin = unit(c(4,4,4,4), "mm"),
         plot.caption = element_text(color = "gray35", size = 12))
 
 
